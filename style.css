@@ -126,7 +126,7 @@ nav {
             background: url('images/vanmathi_home_page4.png') no-repeat center center/cover;
         }
     }
-	.content {
+    .content {
     z-index: 1;
     position: relative;
 }
@@ -136,7 +136,7 @@ nav {
 
 
 
-#about, #projects, #contact, #Competencies {
+#about, #contact, #Competencies {
     padding: 50px;
     text-align: center;
 }
