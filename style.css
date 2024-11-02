@@ -62,20 +62,21 @@ nav {
 
 
 
-/* Mobile Responsiveness */
 @media (max-width: 500px) {
     .nav-links {
-        position: absolute;
+        position: fixed;
         right: 0;
-        height: 100vh;
         top: 0;
+        height: 100vh;
         background-color: #333;
+        display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         width: 100%;
         transform: translateX(100%);
         transition: transform 0.3s ease-in-out;
+        z-index: 10;
     }
 
     .nav-links.nav-active {
@@ -88,9 +89,10 @@ nav {
 
     .burger {
         display: flex;
+        z-index: 11;
     }
 
-    /* Rotate the burger icon on click */
+    /* Burger Menu Animation */
     .burger.toggle div:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
     }
