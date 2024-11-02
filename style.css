@@ -123,6 +123,10 @@ nav {
             background: url('images/vanmathi_home_page4.png') no-repeat center center/cover;
         }
     }
+	.content {
+    z-index: 1;
+    position: relative;
+}
 }
 
 
