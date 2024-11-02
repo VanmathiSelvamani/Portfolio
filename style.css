@@ -83,6 +83,10 @@ nav {
         text-align: center; /* Center text in dropdown */
     }
 
+    .nav-links a {
+        padding: 5px; /* Reduced padding to decrease height */
+    }
+	
     .burger {
         display: flex; /* Show burger icon on mobile */
     }
