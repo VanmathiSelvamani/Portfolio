@@ -72,6 +72,8 @@ nav {
         top: 50px; /* Adjust this based on header height */
         left: 0;
         z-index: 10;
+	max-height: 250px; /* Set a maximum height for the dropdown */
+        overflow-y: auto; /* Enable vertical scrolling if content exceeds max height */
     }
 
     .nav-links.active {
@@ -81,10 +83,6 @@ nav {
     .nav-links li {
         margin: 10px 0; /* Vertical spacing for dropdown items */
         text-align: center; /* Center text in dropdown */
-    }
-
-    .nav-links a {
-        padding: 5px; /* Reduced padding to decrease height */
     }
 	
     .burger {
