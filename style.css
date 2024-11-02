@@ -102,7 +102,10 @@ nav {
 @media (max-width: 500px) {
     #home {
         height: 15vh; /* Reduced height for smaller screens */
+	display: flex;
         background-size: cover;
+	animation: changeBackground 12s infinite;
+	overflow: hidden;
     }
 
     /* Adjust background images for mobile */
