@@ -180,36 +180,6 @@ nav {
 }
 
 
-
-
-
-
-
-
-@media screen and (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-
-
-    .nav-links.active {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        background: #333;
-    }
-
-    .nav-links li {
-        text-align: center;
-        margin: 10px 0;
-    }
-
-}
-
-
-
-
-
 /* Animation for the ABOUT CONTENT */
 .text.revealing {
   animation: fadeInScale 1s forwards ease-in-out;
