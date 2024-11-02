@@ -406,7 +406,6 @@ nav {
        
         .projects-container {
             max-width: 100%; /* Adjusted for mobile */
-            
             overflow: hidden; /* Prevent overflow in slideshow */
         }
         
@@ -415,9 +414,7 @@ nav {
             flex-direction: column; /* Stack items vertically */
             align-items: center;
             justify-content: center;
-            
             text-align: justify;
-            
             border-radius: 10px;
             opacity: 0;
             transition: opacity 0.5s ease;
@@ -436,7 +433,7 @@ nav {
         }
         
         .project-title {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             margin-bottom: 15px;
             font-weight: bold;
         }
