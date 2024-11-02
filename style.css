@@ -72,7 +72,7 @@ nav {
         top: 50px; /* Adjust this based on header height */
         left: 0;
         z-index: 10;
-	max-height: 250px; /* Set a maximum height for the dropdown */
+	max-height: 750px; /* Set a maximum height for the dropdown */
         
     }
 
