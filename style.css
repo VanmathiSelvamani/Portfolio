@@ -66,7 +66,7 @@ nav {
     .nav-links {
         display: none; /* Hide navigation links by default */
         flex-direction: column;
-        width: 100%;
+        width: 30%;
         background-color: #333;
         position: absolute; /* Position it below the header */
         top: 50px; /* Adjust this based on header height */
