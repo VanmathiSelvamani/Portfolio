@@ -410,7 +410,7 @@ nav {
         }
         
         .project {
-            display: none; /* Hide projects by default for slideshow */
+           
             flex-direction: column; /* Stack items vertically */
             align-items: center;
             justify-content: center;
@@ -433,7 +433,7 @@ nav {
         }
         
         .project-title {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             margin-bottom: 15px;
             font-weight: bold;
         }
