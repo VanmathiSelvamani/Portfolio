@@ -177,10 +177,6 @@ nav {
 
 
 
-#about, #contact, #Competencies {
-    padding: 50px;
-    text-align: left;
-}
 
 
 /* Animation for the ABOUT CONTENT */
@@ -204,7 +200,7 @@ nav {
 
 
 #about {
-  padding: 20px;
+  padding: 60px;
   overflow: hidden;
   text-align: justify;
 }
