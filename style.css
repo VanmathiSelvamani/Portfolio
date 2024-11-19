@@ -277,7 +277,7 @@ nav {
         }
 
         .project-description {
-            max-width: 45%;
+            max-width: 50%;
             font-size: 1rem;
             line-height: 1.6;
             transition: transform 0.5s ease;
