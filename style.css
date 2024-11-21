@@ -14,7 +14,6 @@ body {
     color: #fff;
     padding: 10px 0;
 }
-
 .logo {
     font-size: 24px;
     font-weight: bold;
@@ -27,9 +26,9 @@ nav {
     align-items: center;
 }
 
-.nav-links a:hover {
-    transition: color .6s ease-in-out, box-shadow .6s ease-in-out;
-    box-shadow: inset 200px 0 0 0 #82c988;
+.nav-links a:hover{
+  transition: color .6s ease-in-out, box-shadow .6s ease-in-out;
+  box-shadow: inset 200px 0 0 0 #82c988;;	
 }
 
 .nav-links {
@@ -51,6 +50,7 @@ nav {
     display: none;
     flex-direction: column;
     cursor: pointer;
+
 }
 
 .burger div {
@@ -59,51 +59,6 @@ nav {
     background-color: white;
     margin: 5px;
 }
-
-
-
-@media (max-width: 500px) {
-    .nav-links {
-        display: none; /* Hide navigation links by default */
-        flex-direction: column;
-        width: 100%;
-        background-color: #333;
-        position: absolute; /* Position it below the header */
-        top: 50px; /* Adjust based on header height */
-        left: 0;
-        z-index: 10;
-        max-height: 200px; /* Set a maximum height for the dropdown */
-        overflow-y: auto; /* Enable vertical scrolling */
-        padding: 10px 0; /* Add some padding */
-    }
-
-    .nav-links.active {
-        display: flex; /* Show navigation links when active */
-    }
-
-    .nav-links li {
-        margin: 10px 0; /* Vertical spacing for dropdown items */
-        text-align: center; /* Center text in dropdown */
-    }
-
-    .burger {
-        display: flex; /* Show burger icon on mobile */
-    }
-
-    /* Burger Animation */
-    .burger.toggle div:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-    .burger.toggle div:nth-child(2) {
-        opacity: 0;
-    }
-    .burger.toggle div:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
-    }
-}
-
-
-
 
 #home {
     /* Background images for desktop */
@@ -179,6 +134,37 @@ nav {
 
 
 
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background: #333;
+    }
+
+    .nav-links li {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+}
+
+
+
+
+
 /* Animation for the ABOUT CONTENT */
 .text.revealing {
   animation: fadeInScale 1s forwards ease-in-out;
@@ -199,11 +185,44 @@ nav {
 }
 
 
-#about {
-  padding: 70px;
+.wp-block-heading{padding-left:10px;}
+.wp-block-headings{padding-left:70px;}
+
+
+p.me {
+  padding-left: 70px;
+  padding-right: 70px;
+  padding-bottom: 40px;
   overflow: hidden;
   text-align: justify;
 }
+
+
+
+/* Mobile Responsiveness */
+@media (max-width: 500px) {
+    #about{
+        p.me {
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 40px;
+            overflow: hidden;
+            text-align: justify;
+          }
+    }
+
+.wp-block-heading{padding-left:3px;}
+.wp-block-headings{padding-left:20px;}
+
+
+}
+
+
+
+
+
+
+
 
 
 /* Mobile Responsiveness */
@@ -251,7 +270,7 @@ nav {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             padding: 20px;
 	        text-align: justify;
             border: 1px solid #ddd;
@@ -263,7 +282,7 @@ nav {
 
         .project img {
             max-width: 45%;
-            border-radius: 10px;
+            border-radius: 30px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.5s ease;
         }
@@ -277,6 +296,7 @@ nav {
             font-size: 1rem;
             line-height: 1.6;
             transition: transform 0.5s ease;
+          
         }
 
         .project-title {
@@ -638,15 +658,11 @@ nav {
 
 #contact {
     padding: 50px;
-    background-color: #D3D3D3;
+    background-color: #333;;
     text-align: center;
 }
 
-#contact h2 {
-    margin-bottom: 30px;
-    font-size: 2rem;
-    color: #333;
-}
+
 
 .contact-container {
     display: flex;
@@ -669,12 +685,12 @@ nav {
 
 .contact-item a {
     text-decoration: none;
-    color: #0073b1; /* LinkedIn blue color */
+    color: #f7fbfe; /* LinkedIn blue color */
     font-weight: bold;
 }
 
 .contact-item a:hover {
-    color: #005582; /* Darker shade for hover effect */
+    color: #57b2e3; /* Darker shade for hover effect */
 }
 
 /* Colorful Icons */
@@ -683,15 +699,15 @@ nav {
 }
 
 .contact-item i.fas.fa-envelope {
-    color: #dc3545; /* Red for email */
+    color: #f94456; /* Red for email */
 }
 
 .contact-item i.fab.fa-linkedin {
-    color: #0073b1; /* LinkedIn blue */
+    color: #0596e3; /* LinkedIn blue */
 }
 
 .contact-item i.fab.fa-instagram {
-    color: #e1306c; /* Instagram color */
+    color: #f83878; /* Instagram color */
 }
 
 .contact-item i.fas.fa-map-marker-alt {
@@ -714,7 +730,8 @@ nav {
 
 
 /* Animations for page headings */
-.multicolor-animated-heading {		color: #fff;
+.multicolor-animated-heading {
+    	color: #fff;
 		background: linear-gradient(to right,#095fab 10%, #25abe8 50%, #57d75b 60%);
 		background-size: auto auto;
 		background-clip: border-box;
@@ -733,6 +750,29 @@ nav {
 	}
 }
 /*------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
