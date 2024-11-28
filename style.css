@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+html {
+    scroll-behavior: smooth; /* Enables smooth scrolling when clicking navigation links */
+}
 
 body {
     font-family: 'Arial', sans-serif;
@@ -24,6 +27,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+   
 }
 
 .nav-links a:hover{
@@ -46,63 +50,258 @@ nav {
     padding: 10px;
 }
 
+
+    /* When the menu is active, it slides in */
+    .nav-links.active {
+        transform: translateX(0%); /* Slide the menu in */
+    }
+
+    
+
+
+
+/* General Burger Menu Styles */
 .burger {
     display: none;
     flex-direction: column;
     cursor: pointer;
-
+    width: 25px;
+    height: 20px;
+    justify-content: space-between;
+    z-index: 1001;
+    transition: transform 0.3s ease-in-out;
 }
 
 .burger div {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 5px;
+    width: 100%;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* When burger is toggled (active) */
+.burger.toggle div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.toggle div:nth-child(2) {
+    opacity: 0; /* Hide the middle bar */
+}
+
+.burger.toggle div:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Default Navigation Styles */
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    /* Hide navigation links on mobile */
+    .nav-links {
+        display: none;
+        width: 100%;
+        background: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        flex-direction: column;
+        text-align: center;
+        z-index: 1000;
+    }
+
+    /* Show the navigation links when active */
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    /* Display the burger menu icon */
+    .burger {
+        display: flex;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Header Animation */
+@keyframes textclip {
+    to {
+        background-position: 200% center;
+    }
+}
+
+.multicolor-animated-heading {
+    color: #fff;
+    background: linear-gradient(to right, #095fab 10%, #25abe8 50%, #57d75b 60%);
+    background-size: 200% auto;
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 1.5s linear infinite;
+}
+
+    
+
+
+
+
+
+
+
+
+
+
+/* Animation for Multicolor Heading */
+@keyframes textclip {
+    to {
+        background-position: 200% center;
+    }
 }
 
 #home {
-    /* Background images for desktop */
     height: 50vh;
+    position: relative;
+    overflow: visible;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: white;
-    animation: changeBackground 12s infinite;
-    overflow: hidden;
 }
 
-@keyframes changeBackground {
-    0% {
-        background: url('images/1.png') no-repeat center center/cover;
-    }
-    10% {
-        background: url('images/1.png') no-repeat center center/cover;
-    }
-    33% {
-        background: url('images/2.png') no-repeat center center/cover;
-    }
-    66% {
-        background: url('images/3.png') no-repeat center center/cover;
-    }
-    100% {
-        background: url('images/4.png') no-repeat center center/cover;
-    }
-}
-
-.content {
-    z-index: 1;
+/* Slider Container */
+.slider {
     position: relative;
+    width: 100%;
+    height: 100%;
 }
+
+/* Slides Container */
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+/* Hide radio buttons */
+input[type="radio"] {
+    display: none;
+}
+
+/* Slide Styling */
+.slide {
+    min-width: 100%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Navigation Buttons (dots) */
+.navigation {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.navigation label {
+    width: 12px;
+    height: 12px;
+    background: rgb(101, 247, 105);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.navigation label:hover {
+    background: #9bcf0a;
+}
+
+/* Slides positioning based on the checked radio button */
+#slide1:checked ~ .slider .slides {
+    transform: translateX(0%);
+}
+
+#slide2:checked ~ .slider .slides {
+    transform: translateX(-100%);
+}
+
+#slide3:checked ~ .slider .slides {
+    transform: translateX(-200%);
+}
+
+#slide4:checked ~ .slider .slides {
+    transform: translateX(-300%);
+}
+
+/* Highlight active dot */
+#slide1:checked ~ .navigation label[for="slide1"],
+#slide2:checked ~ .navigation label[for="slide2"],
+#slide3:checked ~ .navigation label[for="slide3"],
+#slide4:checked ~ .navigation label[for="slide4"] {
+    background: #056919;
+}
+
+
 
 /* Mobile Responsiveness */
 @media (max-width: 500px) {
     #home {
         height: 15vh; /* Reduced height for smaller screens */
-	display: flex;
+	    display: flex;
         background-size: cover;
-	animation: changeBackground 12s infinite;
-	overflow: hidden;
+	    overflow: hidden;
+
+        .navigation {
+            position: absolute;
+            bottom: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+        
     }
 
     /* Adjust background images for mobile */
@@ -127,6 +326,7 @@ nav {
     z-index: 1;
     position: relative;
 }
+
 }
 
 
@@ -761,30 +961,36 @@ p.me {
 
 
 
+/* Style for the Sticky Arrow */
+.sticky-arrow {
+    position: fixed;         /* Position it fixed on the screen */
+    bottom: 20px;            /* Adjust the distance from the bottom of the page */
+    right: 20px;             /* Adjust the distance from the right side */
+    z-index: 1000;           /* Ensure the arrow stays on top of other content */
+    cursor: pointer;        /* Pointer cursor on hover */
+    transition: opacity 0.3s ease; /* Smooth opacity transition */
+}
 
+/* Style for the Arrow */
+.sticky-arrow .arrow {
+    width: 30px;
+    height: 30px;
+    border-left: 4px solid #8f4f0f;   /* Arrow left part */
+    border-bottom: 4px solid #158811; /* Arrow bottom part */
+    transform: rotate(45deg); /* Rotate to make it look like an arrow */
+}
 
+/* Hide the sticky arrow when at the top of the page */
+.sticky-arrow.hidden {
+    opacity: 0;  /* Make it invisible */
+    pointer-events: none; /* Disable clicking */
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* Show arrow when scrolled down */
+.sticky-arrow.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
 
 
 
