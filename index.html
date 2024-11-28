@@ -12,7 +12,7 @@
 	
 </head>
 <body>
-    <header>
+<header>
 	<div class="header" id="myHeader">
 	
         <nav>
@@ -27,9 +27,11 @@
                 <li><a href="#contact">Contact</a></li>
 	    </ul>
 	    <div class="burger">
-                <div></div>
-                <div></div>
-                <div></div>
+            
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+                
             </div>
         </nav>
 	
@@ -39,11 +41,41 @@
 	
 <section id="home">
 	
-        <div class="content">
-            
+    <!-- Hidden radio buttons -->
+    <input type="radio" id="slide1" name="slider" checked>
+    <input type="radio" id="slide2" name="slider">
+    <input type="radio" id="slide3" name="slider">
+    <input type="radio" id="slide4" name="slider">
+    
+    <!-- Slider -->
+    <div class="slider">
+        <div class="slides">
+            <div class="slide"><img src="images/1.png" alt="Image 1"></div>
+            <div class="slide"><img src="images/2.png" alt="Image 2"></div>
+            <div class="slide"><img src="images/3.png" alt="Image 3"></div>
+            <div class="slide"><img src="images/4.png" alt="Image 4"></div>
         </div>
+    </div>
+    
+    <!-- Navigation Dots -->
+    <div class="navigation">
+        <label for="slide1"></label>
+        <label for="slide2"></label>
+        <label for="slide3"></label>
+        <label for="slide4"></label>
+    </div>
 </section>
 <br></br>
+
+
+
+<!-- Sticky Arrow Icon -->
+<a href="#home" class="sticky-arrow">
+    <div class="arrow"></div>
+</a>
+
+
+
 
 <section id="about">
     <h2 class="wp-block-headings has-text-align-center ticss-285f8adc multicolor-animated-heading" id="heading-text-1" style="font-size:30px;text-transform:capitalize">About Me</h2>
@@ -206,12 +238,7 @@
 <br></br>
 <section id="contact">
     <div class="contact-container">
-<!--
-        <div class="contact-item">
-            <i class="fas fa-phone"></i>
-            <span>+91 9080315402</span>
-        </div>
--->
+
         <div class="contact-item">
             <i class="fas fa-envelope"></i>
             <span><a href="mailto:vanmathi4004@gmail.com">vanmathi4004@gmail.com</a></span>
