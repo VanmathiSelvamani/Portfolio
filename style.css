@@ -287,22 +287,32 @@ input[type="radio"] {
 /* Mobile Responsiveness */
 @media (max-width: 500px) {
     #home {
-        height: 15vh; /* Reduced height for smaller screens */
-	    display: flex;
+        height: 12vh; /* Adjust height for better fit on mobile */
+        display: flex;
+        overflow: hidden;
         background-size: cover;
-	    overflow: hidden;
-
-        .navigation {
-            position: absolute;
-            bottom: 2px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
-            z-index: 10;
-        }
-        
+        background-position: center;
     }
+
+    .slider {
+        height: 100%; /* Ensure the slider takes full height */
+    }
+
+    /* Adjust slides and image fit */
+    .slide img {
+        object-fit: cover; /* Ensure images cover the available area without stretching */
+    }
+
+    .navigation {
+        position: absolute;
+        bottom: 1px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+        z-index: 10;
+    }
+
 
     /* Adjust background images for mobile */
     @keyframes changeBackground {
