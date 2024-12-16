@@ -7,7 +7,15 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>Vanmathi Selvamani - Portfolio</title>
     <link rel="stylesheet" href="style.css">
-
+    
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function() {
+        emailjs.init("jtbOxTAXtZGYaTbH_");
+      })();
+    </script>
 
 	
 </head>
@@ -223,9 +231,28 @@
 <br></br>
 
 
+<section class="container mx-auto py-16 px-4">
+    <h3 class="text-3xl font-bold text-center mb-8">Get In Touch</h3>
+  <form action="#" class="max-w-xl mx-auto bg-white shadow p-6 rounded">
+    <div class="mb-4">
+      <label for="name" class="block text-sm font-bold mb-2">Name</label>
+      <input type="text" id="name" class="w-full px-4 py-2 border rounded" placeholder="Your Name">
+    </div>
+    <div class="mb-4">
+      <label for="email" class="block text-sm font-bold mb-2">Email</label>
+      <input type="email" id="email" class="w-full px-4 py-2 border rounded" placeholder="Your Email">
+    </div>
+    <div class="mb-4">
+      <label for="message" class="block text-sm font-bold mb-2">Message</label>
+      <textarea id="message" class="w-full px-4 py-2 border rounded" rows="4" placeholder="Your Message"></textarea>
+    </div>
+    <button onclick="sendemail()" type="submit" class="w-full bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Send Message</button>
+  </form>
+</section>
+<br></br>
 
 <h2 class="wp-block-headings has-text-align-center ticss-285f8adc multicolor-animated-heading" id="heading-text-1" style="font-size:30px;text-transform:capitalize">Contact Me</h2>
-<br></br>
+
 <section id="contact">
     <div class="contact-container">
 
@@ -252,8 +279,8 @@
 
 
 <!-- Sticky Arrow Icon -->
-<a href="#home" class="sticky-arrow">
-    <div class="arrow"></div>
+<a href="#home" class="sticky-arrow hidden">
+    <div class="arrow"></div> <!-- Arrow inside the circular background -->
 </a>
 
 
@@ -261,6 +288,32 @@
 
 
 <script src="script.js">
+    
+function sendemail(){
+
+var email=document.getElementById("email").value;
+var name=document.getElementById("name").value;
+var from_name=document.getElementById("name").value;
+var message=document.getElementById("message").value;
+
+var templateParams = {
+  from_name : from_name,
+      email: email,
+      name: name,
+  message: message
+    };
+
+    emailjs.send('service_1z4b6ld', 'template_8b6fcnl', templateParams)
+.then(function(response) {
+   console.log('SUCCESS!', response.status, response.text);
+   window.alert("Sent successfully!");
+   
+})
+
+   
+}
+      
+
 </script>
 </body>
 </html>
