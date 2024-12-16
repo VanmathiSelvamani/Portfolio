@@ -42,3 +42,33 @@ stickyArrow.addEventListener('click', () => {
 
 
 
+
+
+
+
+
+function sendemail(){
+
+    var email=document.getElementById("email").value;
+    var name=document.getElementById("name").value;
+    var from_name=document.getElementById("name").value;
+    var message=document.getElementById("message").value;
+    
+    var templateParams = {
+      from_name : from_name,
+          email: email,
+          name: name,
+      message: message
+        };
+    
+        emailjs.send('service_1z4b6ld', 'template_8b6fcnl', templateParams)
+    .then(function(response) {
+       console.log('SUCCESS!', response.status, response.text);
+       window.alert("Sent successfully!");
+       
+    })
+    
+       
+    }
+
+
