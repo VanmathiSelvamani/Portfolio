@@ -313,6 +313,19 @@ input[type="radio"] {
         z-index: 10;
     }
 
+    .navigation label {
+        width: 08px;
+        height: 08px;
+        background: rgb(101, 247, 105);
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+    
+    .navigation label:hover {
+        background: #9bcf0a;
+    }
+    
 
     /* Adjust background images for mobile */
     @keyframes changeBackground {
@@ -977,23 +990,39 @@ p.me {
     bottom: 20px;            /* Adjust the distance from the bottom of the page */
     right: 20px;             /* Adjust the distance from the right side */
     z-index: 1000;           /* Ensure the arrow stays on top of other content */
-    cursor: pointer;        /* Pointer cursor on hover */
-    transition: opacity 0.3s ease; /* Smooth opacity transition */
+    cursor: pointer;         /* Pointer cursor on hover */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth opacity and transform transition */
 }
 
 /* Style for the Arrow */
 .sticky-arrow .arrow {
-    width: 30px;
-    height: 30px;
-    border-left: 4px solid #8f4f0f;   /* Arrow left part */
-    border-bottom: 4px solid #158811; /* Arrow bottom part */
-    transform: rotate(45deg); /* Rotate to make it look like an arrow */
+    width: 50px;             /* Circle width */
+    height: 50px;            /* Circle height */
+    background-color: #158811; /* Circle background color */
+    border-radius: 50%;      /* Make it a circle */
+    display: flex;           /* Center align the content */
+    justify-content: center; /* Center align horizontally */
+    align-items: center;     /* Center align vertically */
+    position: relative;      /* For inner arrow alignment */
+    transform: translateY(0); /* Initial transform for bounce effect */
+    animation: bounce 2s infinite; /* Add bounce animation */
+}
+
+/* Inner Arrow */
+.sticky-arrow .arrow::before {
+    content: '';                  /* Empty content for arrow */
+    width: 12px;                  /* Width of the arrow shaft */
+    height: 12px;                 /* Height of the arrow shaft */
+    border-left: 4px solid white; /* Left border for arrow */
+    border-top: 4px solid white;  /* Top border for arrow */
+    transform: rotate(45deg);    /* Rotate to create an upward-facing arrow */
+    position: absolute;           /* Position it in the center */
 }
 
 /* Hide the sticky arrow when at the top of the page */
 .sticky-arrow.hidden {
-    opacity: 0;  /* Make it invisible */
-    pointer-events: none; /* Disable clicking */
+    opacity: 0;             /* Make it invisible */
+    pointer-events: none;   /* Disable clicking */
 }
 
 /* Show arrow when scrolled down */
@@ -1002,12 +1031,31 @@ p.me {
     pointer-events: auto;
 }
 
+/* Bounce animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0); /* Initial position */
+    }
+    50% {
+        transform: translateY(-10px); /* Move up slightly */
+    }
+}
 
 
 
 
 
+.container {
+    background: linear-gradient(135deg, #a6cbe5, #81ec9c); /* Soft gradient background */
+    border-radius: 12px; /* Rounded corners for the section */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    padding: 2rem; /* Extra padding for spacing */
+}
 
+.container .form {
+    background: #ffffff; /* Keeping form background white for contrast */
+    border-radius: 10px;
+}
 
 
 
