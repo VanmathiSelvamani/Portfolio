@@ -13,7 +13,7 @@ body {
 }
 
 .header {
-    background: #333;
+    background: #333333;
     color: #fff;
     padding: 10px 0;
 }
@@ -142,20 +142,6 @@ nav {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Header Animation */
 @keyframes textclip {
     to {
@@ -173,15 +159,6 @@ nav {
     animation: textclip 1.5s linear infinite;
 }
 
-    
-
-
-
-
-
-
-
-
 
 
 /* Animation for Multicolor Heading */
@@ -190,177 +167,6 @@ nav {
         background-position: 200% center;
     }
 }
-
-#home {
-    height: 50vh;
-    position: relative;
-    overflow: visible;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-}
-
-/* Slider Container */
-.slider {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-/* Slides Container */
-.slides {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    height: 100%;
-}
-
-/* Hide radio buttons */
-input[type="radio"] {
-    display: none;
-}
-
-/* Slide Styling */
-.slide {
-    min-width: 100%;
-    height: 100%;
-}
-
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Navigation Buttons (dots) */
-.navigation {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-    z-index: 10;
-}
-
-.navigation label {
-    width: 12px;
-    height: 12px;
-    background: rgb(101, 247, 105);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.navigation label:hover {
-    background: #9bcf0a;
-}
-
-/* Slides positioning based on the checked radio button */
-#slide1:checked ~ .slider .slides {
-    transform: translateX(0%);
-}
-
-#slide2:checked ~ .slider .slides {
-    transform: translateX(-100%);
-}
-
-#slide3:checked ~ .slider .slides {
-    transform: translateX(-200%);
-}
-
-#slide4:checked ~ .slider .slides {
-    transform: translateX(-300%);
-}
-
-/* Highlight active dot */
-#slide1:checked ~ .navigation label[for="slide1"],
-#slide2:checked ~ .navigation label[for="slide2"],
-#slide3:checked ~ .navigation label[for="slide3"],
-#slide4:checked ~ .navigation label[for="slide4"] {
-    background: #056919;
-}
-
-
-
-/* Mobile Responsiveness */
-@media (max-width: 500px) {
-    #home {
-        height: 12vh; /* Adjust height for better fit on mobile */
-        display: flex;
-        overflow: hidden;
-        background-size: cover;
-        background-position: center;
-    }
-
-    .slider {
-        height: 100%; /* Ensure the slider takes full height */
-    }
-
-    /* Adjust slides and image fit */
-    .slide img {
-        object-fit: cover; /* Ensure images cover the available area without stretching */
-    }
-
-    .navigation {
-        position: absolute;
-        bottom: 1px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        gap: 10px;
-        z-index: 10;
-    }
-
-    .navigation label {
-        width: 08px;
-        height: 08px;
-        background: rgb(101, 247, 105);
-        border-radius: 50%;
-        cursor: pointer;
-        transition: background 0.3s ease;
-    }
-    
-    .navigation label:hover {
-        background: #9bcf0a;
-    }
-    
-
-    /* Adjust background images for mobile */
-    @keyframes changeBackground {
-        0% {
-            background: url('images/vanmathi_home_page1.png') no-repeat center center/cover;
-        }
-        10% {
-            background: url('images/vanmathi_home_page1.png') no-repeat center center/cover;
-        }
-        33% {
-            background: url('images/vanmathi_home_page2.png') no-repeat center center/cover;
-        }
-        66% {
-            background: url('images/vanmathi_home_page3.png') no-repeat center center/cover;
-        }
-        100% {
-            background: url('images/vanmathi_home_page4.png') no-repeat center center/cover;
-        }
-    }
-    .content {
-    z-index: 1;
-    position: relative;
-}
-
-}
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -383,6 +189,66 @@ input[type="radio"] {
     }
 
 }
+
+
+
+
+
+
+
+#home {
+    background: linear-gradient(135deg, #32ba98, #096149, #d56ae8, #2ea9eb);
+    background-size: 400% 400%;
+    animation: gradientBG 3s ease infinite; 
+  }
+  
+  /* Gradient animation */
+  @keyframes gradientBG {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  /* Bounce animation for the profile image */
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: translateY(-20px);
+    }
+    50% {
+      transform: translateY(0);
+    }
+    75% {
+      transform: translateY(-5px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  /* Applying the bounce animation */
+  .bounce-animation {
+    animation: bounce 1s ease-in-out infinite;
+  }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1046,14 +912,14 @@ p.me {
 
 
 .container {
-    background: linear-gradient(135deg, #a6cbe5, #81ec9c); /* Soft gradient background */
-    border-radius: 12px; /* Rounded corners for the section */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
-    padding: 2rem; /* Extra padding for spacing */
+    background: linear-gradient(135deg, #a6cbe5, #81ec9c); 
+    border-radius: 12px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    padding: 2rem; 
 }
 
 .container .form {
-    background: #ffffff; /* Keeping form background white for contrast */
+    background: #ffffff; 
     border-radius: 10px;
 }
 
