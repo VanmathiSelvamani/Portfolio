@@ -195,14 +195,15 @@ nav {
 
 
 
-
+/*
 #home {
-    background: linear-gradient(135deg, #32ba98, #096149, #d56ae8, #2ea9eb);
+    background: linear-gradient(135deg, #32ba98, #096149, #d56ae8, #2ea9eb); 
+    background: linear-gradient(135deg, #58b3f4, #5ecb79); 
     background-size: 400% 400%;
-    animation: gradientBG 3s ease infinite; 
+    animation: gradientBG 3s ease infinite;   
   }
-  
-  /* Gradient animation */
+
+  /*
   @keyframes gradientBG {
     0% {
       background-position: 0% 50%;
@@ -214,7 +215,8 @@ nav {
       background-position: 0% 50%;
     }
   }
-  
+*/
+
   /* Bounce animation for the profile image */
   @keyframes bounce {
     0% {
